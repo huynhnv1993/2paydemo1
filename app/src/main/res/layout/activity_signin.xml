@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.windows10gamer.a2paydemo1.activity.SigninActivity"
+    android:weightSum="10"
+    >
+    <LinearLayout
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:background="#9edadada">
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_margin="5dp"
+                android:inputType="text"
+                android:textColorHint="#1277bf"
+                android:hint="EMAIL HOẶC SỐ ĐIỆN THOẠI"
+                android:id="@+id/text_input_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_margin="5dp"
+                android:inputType="text"
+                android:textColorHint="#1277bf"
+                android:hint="MẬT KHẨU"
+                android:id="@+id/text_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/checkBoxSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ghi nhớ tài khoản" />
+
+        <Button
+            android:textColor="#ffffff"
+            android:background="#f96c56"
+            android:layout_margin="5dp"
+            android:id="@+id/buttonSignin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng nhập" />
+
+    </LinearLayout>
+</LinearLayout>
