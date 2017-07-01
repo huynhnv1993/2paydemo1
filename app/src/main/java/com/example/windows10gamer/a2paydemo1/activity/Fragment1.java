@@ -34,7 +34,9 @@ import java.util.Iterator;
  */
 
 public class Fragment1 extends Fragment {
-    private int selected = 0;
+    private int qty = 0,price = 0,Id = 0;
+    private double discount = 0;
+    private String name = "Viettel";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class Fragment1 extends Fragment {
         final ArrayList<GridCardModel> arrList = new ArrayList<>();
         final GridCardAdapter gridAdapter = new GridCardAdapter(getContext(),arrList);
         gridView.setAdapter(gridAdapter);
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -57,7 +60,11 @@ public class Fragment1 extends Fragment {
                             ((TextView) parent.getChildAt(i).findViewById(R.id.price)).setTextColor(Color.parseColor("#2d2c2c"));
                         }
                     }
+
                 }
+                price = arrList.get(position).getPrice();
+                discount = arrList.get(position).getDiscount();
+                Id = arrList.get(position).getId();
             }
         });
 
@@ -98,14 +105,16 @@ public class Fragment1 extends Fragment {
                         try {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             arrList.add(new GridCardModel(jsonObject.getInt("id"),jsonObject.getString("code"),jsonObject.getString("name"),jsonObject.getDouble("import_discount"),jsonObject.getDouble("discount"),jsonObject.getInt("sale_price"),jsonObject.getInt("price")));
-                            gridAdapter.notifyDataSetChanged();
-                            Log.d("arrList", String.valueOf(arrList));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
+                    Id = arrList.get(0).getId();
+                    gridAdapter.notifyDataSetChanged();
+                    price = arrList.get(0).getPrice();
+                    discount = arrList.get(0).getDiscount();
 
-
+                    name = (String) ((TextView) sp.getChildAt(0).findViewById(R.id.company)).getText();
                 }
             }
 
@@ -115,13 +124,20 @@ public class Fragment1 extends Fragment {
             }
         });
 
-
         Button btn_continue1 = (Button) view1.findViewById(R.id.btn_continue1);
         btn_continue1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                qty = activity.minteger;
                 Intent intent = new Intent(getContext(),PaymentActivity.class);
-                intent.putExtra("qty",activity.minteger);
+                intent.putExtra("qty",qty);
+                intent.putExtra("id",Id);
+                intent.putExtra("name",name);
+                intent.putExtra("price",price);
+                intent.putExtra("discount",discount);
+                intent.putExtra("type","PREPAIDCARD");
+                intent.putExtra("profile",activity.getIntent().getStringExtra("profile"));
+                intent.putExtra("token",activity.getIntent().getStringExtra("token"));
                 startActivity(intent);
             }
         });

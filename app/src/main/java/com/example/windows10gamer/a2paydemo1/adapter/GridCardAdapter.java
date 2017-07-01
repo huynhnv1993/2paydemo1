@@ -1,6 +1,7 @@
 package com.example.windows10gamer.a2paydemo1.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +55,13 @@ public class GridCardAdapter extends BaseAdapter {
         price.setText(decimalFormat.format(arrayList.get(position).getPrice()) + " đ");
         TextView sale_price = (TextView) gridView.findViewById(R.id.sale_price);
         sale_price.setText("Giá: "+decimalFormat.format(arrayList.get(position).getSale_price()) + " đ");
-
+        if(position == 0){
+            price.setTextColor(Color.WHITE);
+            gridView.setBackgroundResource(R.drawable.border_box_blue);
+        }else {
+            gridView.setBackgroundResource(R.drawable.border_box);
+            price.setTextColor(Color.parseColor("#2d2c2c"));
+        }
         return gridView;
     }
 }

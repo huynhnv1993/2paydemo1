@@ -69,7 +69,9 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                         if (response != null){
                             cardphone = response;
                             Intent intent = new Intent(getApplicationContext(),PrepaidActivity.class);
+                            intent.putExtra("profile",getIntent().getStringExtra("profile"));
                             intent.putExtra("cardphone", cardphone);
+                            intent.putExtra("token", token);
                             startActivity(intent);
                             progressDialog.dismiss();
                         }else {

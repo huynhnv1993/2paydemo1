@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/2paydemo1.iml" filepath="$PROJECT_DIR$/2paydemo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org-apache-ws-commons-util/org-apache-ws-commons-util.iml" filepath="$PROJECT_DIR$/org-apache-ws-commons-util/org-apache-ws-commons-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmlrpc-client/xmlrpc-client.iml" filepath="$PROJECT_DIR$/xmlrpc-client/xmlrpc-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmlrpc-common-3.1/xmlrpc-common-3.1.iml" filepath="$PROJECT_DIR$/xmlrpc-common-3.1/xmlrpc-common-3.1.iml" />
     </modules>
   </component>
 </project>

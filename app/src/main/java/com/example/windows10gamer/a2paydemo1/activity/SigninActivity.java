@@ -25,6 +25,7 @@ import com.example.windows10gamer.a2paydemo1.ultil.Server;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import com.example.windows10gamer.a2paydemo1.xmlrpc;
 
 public class SigninActivity extends AppCompatActivity implements View.OnClickListener {
     private String username,password;
@@ -55,8 +56,12 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
             editTextPassword.setText(loginPreferences.getString("password", ""));
             saveLoginCheckBox.setChecked(true);
         }
+        test();
     }
 
+    private void test() {
+//        new xmlrpc().execute();
+    }
 
     public void onClick(View view) {
         if (view == ok) {

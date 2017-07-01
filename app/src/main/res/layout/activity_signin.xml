@@ -43,7 +43,7 @@
             android:layout_height="wrap_content">
             <EditText
                 android:layout_margin="5dp"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:textColorHint="#1277bf"
                 android:hint="MẬT KHẨU"
                 android:id="@+id/text_input_password"
